@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Diwali Bangaram 🪔</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0a0414;--gold:#ffc857;--text:#fff1dc;--pink:#ff8fb1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+#stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.5s,transform 1.5s}
+#stage.gone{opacity:0;transform:translateY(-60px) scale(.7);pointer-events:none}
+.glow{position:absolute;width:min(420px,95vw);height:min(420px,95vw);border-radius:50%;background:radial-gradient(circle,rgba(255,170,40,.55),transparent 65%);opacity:0;animation:glow 3s 1s forwards,pulse 2.5s 4s infinite}
+@keyframes glow{to{opacity:1}}
+@keyframes pulse{50%{transform:scale(1.15);opacity:.8}}
+svg.diya{width:min(260px,60vw);position:relative;opacity:0;transform:translateY(30px);animation:rise 1.5s .2s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.flame{transform-origin:100px 80px;opacity:0;animation:light 1.2s 1.2s forwards,flick .15s 2.4s infinite alternate}
+@keyframes light{to{opacity:1}}
+@keyframes flick{from{transform:scale(1,1) rotate(-1.5deg)}to{transform:scale(.93,1.08) rotate(1.5deg)}}
+.hint{margin-top:24px;font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--gold);opacity:0;animation:rise 1.5s 2.2s forwards;position:relative}
+#card{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 2s}
+#card.show{opacity:1;pointer-events:auto}
+.box{width:100%;max-width:640px;max-height:90vh;max-height:90dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:26px 20px;border-radius:24px;background:rgba(20,8,36,.72);border:1px solid rgba(255,200,87,.35);box-shadow:0 0 60px rgba(255,160,40,.25);backdrop-filter:blur(8px);text-align:center}
+h1{font-family:'Dancing Script',cursive;font-size:clamp(2rem,8vw,3rem);color:var(--gold);margin-bottom:16px;text-shadow:0 0 18px rgba(255,170,40,.7)}
+.box p{font-weight:300;line-height:1.8;font-size:clamp(.98rem,3.6vw,1.12rem);margin:10px 0;opacity:0;transform:translateY(14px);transition:opacity 1.2s,transform 1.2s}
+.box p.in{opacity:1;transform:none}
+.box p.last{font-family:'Dancing Script',cursive;font-size:clamp(1.4rem,6vw,1.9rem);color:var(--pink)}
+button{margin-top:18px;background:none;border:1px solid var(--gold);color:var(--gold);padding:8px 20px;border-radius:20px;font:inherit;cursor:pointer;opacity:0;transition:opacity 1s}
+button.in{opacity:1}
+.fl{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards;z-index:5}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="stage">
+  <div class="glow"></div>
+  <svg class="diya" viewBox="0 0 200 150">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0842a"/><stop offset="1" stop-color="#8a3a10"/></linearGradient>
+      <radialGradient id="f" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ffb52e"/><stop offset="1" stop-color="#ff5a1a"/></radialGradient>
+    </defs>
+    <path class="flame" d="M100 18 C120 45 125 62 100 82 C75 62 80 45 100 18Z" fill="url(#f)"/>
+    <path d="M20 82 Q100 70 180 82 Q170 140 100 142 Q30 140 20 82Z" fill="url(#g)"/>
+    <ellipse cx="100" cy="82" rx="80" ry="9" fill="#5a2208"/>
+    <rect x="97" y="76" width="6" height="9" rx="2" fill="#222"/>
+    <circle cx="60" cy="108" r="4" fill="#ffc857"/><circle cx="100" cy="118" r="4" fill="#ffc857"/><circle cx="140" cy="108" r="4" fill="#ffc857"/>
+  </svg>
+  <div class="hint">Happy Diwali 🪔</div>
+</div>
+<div id="card"><div class="box">
+  <h1>Happy Diwali Bangaram 🥰</h1>
+  <p>Nuvvu vachaka na life prathi day diwali celebration laga lights tho nindi poyindi bangaram 😘</p>
+  <p>Chala lucky ga feel avutha ammu nuvvu vunnadhuku na life lo 😊</p>
+  <p>Nuvvu navvithe naa world motham beautiful ga maripothundi 😚</p>
+  <p>Ninnu taluchukunte chaalu face meedha automatic ga smile vasthundi 💖</p>
+  <p>Nuvvu naa life lo undatame naaku biggest happiness bangaram 😘</p>
+  <p>Nuvvu eppudu ilaane navvuthu happy ga undali bangaram 💝</p>
+  <p>Ilane na life appudu vuntav ani anukutunna bangaram, nuvvu vunte chalu bangaram naku 🥰☺️</p>
+  <p class="last">I love you soooooooooo muccchhhhhh bangaram 😘🥰</p>
+  <button id="re">Replay ✨</button>
+</div></div>
+<script>
+const cv=document.getElementById('c'),x=cv.getContext('2d');let W,H,P=[],R=[],run=false;
+function rs(){W=innerWidth;H=innerHeight;const d=Math.min(devicePixelRatio||1,2);cv.width=W*d;cv.height=H*d;x.setTransform(d,0,0,d,0,0)}rs();addEventListener('resize',rs);
+const cols=['#ffc857','#ff6b6b','#ff8fb1','#7be0ff','#b28dff','#fff1dc','#ff9f1c'];
+function launch(){R.push({x:W*(.15+Math.random()*.7),y:H,ty:H*(.15+Math.random()*.35),c:cols[Math.random()*cols.length|0]})}
+function burst(a,b,c){const n=innerWidth<600?45:70;for(let i=0;i<n;i++){const t=i/n*6.283,s=1+Math.random()*3.5;P.push({x:a,y:b,vx:Math.cos(t)*s,vy:Math.sin(t)*s,l:1,c})}}
+function loop(){if(!run)return;x.fillStyle='rgba(10,4,20,.22)';x.fillRect(0,0,W,H);
+ R=R.filter(r=>{r.y-=7;x.fillStyle=r.c;x.fillRect(r.x,r.y,2.5,8);if(r.y<=r.ty){burst(r.x,r.y,r.c);return false}return true});
+ P=P.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.vx*=.985;p.l-=.013;x.globalAlpha=Math.max(p.l,0);x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,2,0,6.283);x.fill();x.globalAlpha=1;return p.l>0});
+ requestAnimationFrame(loop)}
+let timers=[],iv;
+function play(){
+ timers.forEach(clearTimeout);clearInterval(iv);document.querySelectorAll('.fl').forEach(e=>e.remove());
+ const st=document.getElementById('stage'),cd=document.getElementById('card');
+ st.classList.remove('gone');cd.classList.remove('show');
+ document.querySelectorAll('.box p,button').forEach(e=>e.classList.remove('in'));
+ st.style.display='';x.clearRect(0,0,W,H);P=[];R=[];run=false;
+ const T=(f,t)=>timers.push(setTimeout(f,t));
+ T(()=>{run=true;loop();launch();let n=0;iv=setInterval(()=>{launch();if(++n%3==0)launch()},500)},4200);
+ T(()=>st.classList.add('gone'),7500);
+ T(()=>{cd.classList.add('show');petals()},9000);
+ const ps=[...document.querySelectorAll('.box p')];
+ ps.forEach((p,i)=>T(()=>p.classList.add('in'),10000+i*1700));
+ T(()=>document.getElementById('re').classList.add('in'),10000+ps.length*1700);
+}
+function petals(){const e=['🪔','✨','🌸','💖','🪷'];iv&&clearInterval(iv);iv=setInterval(()=>{if(Math.random()<.3)launch();const s=document.createElement('div');s.className='fl';s.textContent=e[Math.random()*e.length|0];s.style.left=Math.random()*100+'vw';s.style.fontSize=12+Math.random()*16+'px';s.style.animationDuration=6+Math.random()*6+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),12000)},600)}
+document.getElementById('re').onclick=play;
+play();
+</script>
+</body>
+</html>
